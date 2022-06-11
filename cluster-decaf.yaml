@@ -7,7 +7,7 @@ metadata:
 
 vpc:
   subnets:
-    private:
+    public:
       us-west-2b: { id: subnet-03e50ae6f81515fb5 }
       us-west-2d: { id: subnet-03ad2a9994ca0de67 }
       us-west-2c: { id: subnet-0205a08881be05567 }
@@ -17,4 +17,5 @@ nodeGroups:
     labels: { role: workers }
     instanceType: t3.small
     desiredCapacity: 3
-    privateNetworking: false
+    ssh:
+      publicKeyPath: ./keypair.pub
